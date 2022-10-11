@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="hu">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Topter Game</title>
+
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+      }
+      #appinfo {
+        position: absolute;
+        display: block;
+        top: 10px;
+        left: 10px;
+        color: yellow;
+        text-align: left;
+        z-index: 100;
+      }
+      #hotkeysinfo {
+        position: absolute;
+        display: block;
+        top: 10px;
+        right: 250px;
+        color: white;
+        text-align: left;
+        z-index: 100;
+      }
+    </style>
+
+    <!-- Polyfill importmap for Firefox -->
+    <script async src="./polyfills/es-module-shims.js"></script>
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "./three-js/build/three.module.js",
+          "TrackballControls": "./three-js/examples/jsm/controls/TrackballControls.js",
+          "stats": "./three-js/examples/jsm/libs/stats.module.js",
+          "OBJLoader": "./three-js/examples/jsm/loaders/OBJLoader.js",
+          "gui": "./three-js/examples/jsm/libs/lil-gui.module.min.js",
+          "helper": "./lib/helper.js",
+          "interactive-tool": "./lib/interactive-tool.js",
+          "fps-stats": "./lib/fps-stat.js"
+        }
+      }
+    </script>
+
+    <script src="./script.js" type="module"></script>
+  </head>
+  <body>
+    <div id="appinfo">Topter Game<br />2022</div>
+    <div id="hotkeysinfo">
+      Hotkeys:<br /><br />
+      Arrow Up - Move forward <br />
+      Arrow Down - Move backwards <br />
+      Arrow Left - Move left <br />
+      Arrow Right - Move right <br />
+      W - Move up <br />
+      S - Move down <br /><br />
+      I - Show/Hide details
+    </div>
+  </body>
+</html>
