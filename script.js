@@ -31,7 +31,7 @@ let ground,
   moon,
   aLight,
   sLight,
-  slightHelper,
+  // slightHelper,
   pLight;
 
 // Moving variables
@@ -120,7 +120,7 @@ function init() {
   //
   // Adding AxesHelper
   //
-  scene.add(new THREE.AxesHelper(20));
+  // scene.add(new THREE.AxesHelper(20));
 
   //
   // Camera position initialization
@@ -502,7 +502,7 @@ function init() {
   ufoOrbitHolder = new THREE.Object3D();
   ufoOrbitHolder.name = 'UFO-Orbit animation';
   ufoOrbitHolder.position.set(0, 38, 0);
-  ufoOrbitHolder.add(new THREE.AxesHelper(20));
+  // ufoOrbitHolder.add(new THREE.AxesHelper(20));
   scene.add(ufoOrbitHolder);
 
   //
@@ -511,7 +511,7 @@ function init() {
   ufoHolder = new THREE.Object3D();
   ufoHolder.name = 'UFO-Rotation animation';
   ufoHolder.position.set(73, 0, -22);
-  ufoHolder.add(new THREE.AxesHelper(30));
+  // ufoHolder.add(new THREE.AxesHelper(30));
   ufoOrbitHolder.add(ufoHolder);
 
   //
@@ -564,9 +564,9 @@ function init() {
   pLight.name = 'PointLight';
   pLight.position.set(3.6, 21, 23.1);
   scene.add(pLight);
-  const plightHelper = new THREE.PointLightHelper(pLight, 2.5);
-  plightHelper.name = 'PointLight-Helper';
-  scene.add(plightHelper);
+  // const plightHelper = new THREE.PointLightHelper(pLight, 2.5);
+  // plightHelper.name = 'PointLight-Helper';
+  // scene.add(plightHelper);
 
   //
   // Spot light creation
@@ -579,9 +579,9 @@ function init() {
   sLight.shadow.mapSize.width = 128; // Default 512x512
   sLight.shadow.mapSize.height = 128;
   scene.add(sLight);
-  slightHelper = new THREE.SpotLightHelper(sLight);
-  slightHelper.name = 'SpotLight-Helper';
-  scene.add(slightHelper);
+  // slightHelper = new THREE.SpotLightHelper(sLight);
+  // slightHelper.name = 'SpotLight-Helper';
+  // scene.add(slightHelper);
 
   //
   // Sun
@@ -766,7 +766,7 @@ function animate() {
         sLight.color.setHex(0xffffff);
         sLight.intensity = 15;
         sLight.position.x = 100;
-        slightHelper.update();
+        // slightHelper.update();
         sun.visible = true;
         moon.visible = false;
       } else if (ctrlFunctional.illumination === 'night') {
@@ -774,7 +774,7 @@ function animate() {
         sLight.color.setHex(0x6bffff);
         sLight.intensity = 0.5;
         sLight.position.x = -100;
-        slightHelper.update();
+        // slightHelper.update();
         sun.visible = false;
         moon.visible = true;
       }
